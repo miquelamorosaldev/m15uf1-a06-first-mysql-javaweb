@@ -1,6 +1,6 @@
 # m15uf1-a06-first-mysql-javaweb
 Guia de passos per a crear un projecte Java Web (Servlets+JSP) per a connectar amb una base de dades MySQL.
-Pròximament.
+**Pròximament.**
 
 ### Programari requerit per desenvolupar aplicacions web amb Java:
 
@@ -39,7 +39,7 @@ Reload privilege tables now? y
 
 **Reiniciar els serveis.**
 ```
-sudo systemctl restart apache2
+sudo systemctl restart apache2 (només si tenim el xampp)
 sudo systemctl restart mysql
 ```
 
@@ -51,12 +51,40 @@ sudo mysql -u root -p
 
 Més info a https://help.ubuntu.com/lts/serverguide/mysql.html
 
-### Instal·lació MySQL a Windows.
 
-Incorpora servidor MySQL i client gràfic.
-https://www.adslzone.net/esenciales/windows-10/instalar-mysql/
+### Instal·lació MariaDB a Ubuntu 18/20.
 
+**Instal·lar els paquets.**
+```
+sudo apt update
+sudo apt install mariadb-server mariadb-client
+```
+**Configurar la seguretat.**
+```
+sudo mysql_secure_installation
+```
 
+```
+Enter current password for root (enter for none): rootroot
+Set root password? y
+New password: rootroot
+Re-enter new password: rootroot
+Remove anonymous users? y
+Disallow root login remotely? y
+Reload privilege tables now? y
+```
+
+**Reiniciar els serveis.**
+```
+sudo systemctl restart apache2 (només si tenim el xampp)
+sudo systemctl restart mysql
+```
+
+**Accedir a MySQL.**
+```
+sudo mysql --version
+sudo mysql -u root -p
+```
 
 ### Instal·lació client MySQL multiplataforma dbBeaver.
 
@@ -68,3 +96,15 @@ sudo snap install dbeaver-ce
 Més info a https://dbeaver.io/download/
 
 
+### Solució problemes per accedir a MySQL amb phpMyAdmin o dbBeaver. 
+
+Accedir a MySQL per consola com a usuari administrador (root).
+```
+sudo mysql -u root -p
+```
+
+Modificar la contrasenya de l'usuari root. (ha de tenir 8 caracters 1 majúscula 1 nro 1 caracter especial)
+```
+mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Root123!';
+mysql> FLUSH PRIVILEGES;
+```
