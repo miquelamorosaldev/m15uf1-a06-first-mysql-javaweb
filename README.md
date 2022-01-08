@@ -14,7 +14,10 @@ També caldrà tenir una JDK 11.
 Són opcions lleugeres, alternatives a la consola de mysql
 
 Si teniu un una instal·lació XAMPP / LAMPP, podeu aprofitar el MySQL i fins i tot el client XAMPP que teniu instal·lat per a fer funcionar els primers exemples que farem.
-No és recomanable barrejar motors de bases de dades en entorns reals.
+De tota manera, tingueu en compte que no és recomanable barrejar motors de bases de dades en entorns reals.
+
+Però si no teniu XAMPP/LAMPP o voleu tenir una base de dades dedicada, seguiu els passos per a instal·lar-la a Ubuntu.
+
 
 ### Instal·lació MySQL a Ubuntu 18/20.
 
