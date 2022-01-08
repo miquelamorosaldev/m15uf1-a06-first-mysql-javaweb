@@ -13,7 +13,8 @@ També caldrà tenir una JDK 11.
 * Programa Administració BD → PHPMyAdmin o HeidiSQL. 
 Són opcions lleugeres, alternatives a la consola de mysql
 
-Si teniu un una instal·lació XAMPP / LAMPP, podeu aprofitar el MySQL i fins i tot el client XAMPP (no recomanable en entorns reals)
+Si teniu un una instal·lació XAMPP / LAMPP, podeu aprofitar el MySQL i fins i tot el client XAMPP que teniu instal·lat per a fer funcionar els primers exemples que farem.
+No és recomanable barrejar motors de bases de dades en entorns reals.
 
 ### Instal·lació MySQL a Ubuntu 18/20.
 
