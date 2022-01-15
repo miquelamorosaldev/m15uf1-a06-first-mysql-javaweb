@@ -4,7 +4,7 @@ Guia de passos per a crear un projecte Java Web (Servlets+JSP) per a connectar a
 
 ### Programari requerit per desenvolupar aplicacions web amb Java:
 
-* IDE amb suport per PHP → Apache Netbeans 12.
+* IDE amb suport per Java → Apache Netbeans 12.
 * **JDK → JDK 8 actualitzada.**
 També caldrà tenir una JDK 11.
 * **Servidor web configurat amb Java → Apache Tomcat 9.0.20 o Glassfish 5.**
