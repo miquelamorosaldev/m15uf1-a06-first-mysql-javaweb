@@ -10,3 +10,4 @@ Guia de com connectar un projecte Java Web (JSP) amb una BBDD MySQL.
 ## Pas 3. Provar el projecte.
 * Amb Netbeans 12.
 * Apache Tomcat 9.0.20
+* El codi està dins d'index.jsp
