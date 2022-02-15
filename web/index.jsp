@@ -50,14 +50,14 @@
         conn.setAutoCommit(false);
         stmt = conn.createStatement();
         // Ojo! Este código no previene la inyección SQL.
-        String SQL = "INSERT INTO users VALUES ('dawbio1', 'dawbio1', 'staff')";
-        stmt.executeUpdate(SQL);  
+        String SQL = "INSERT INTO users VALUES ('dawbio1b', 'dawbio1b', 'staff')";
+        // stmt.executeUpdate(SQL);  
         // Submit a malformed SQL statement that breaks
         // SQL = "INSERTED IN users VALUES ('Pedro', 'Tez', 'staff')";
         // stmt.executeUpdate(SQL);
         // If there is no error.
         conn.commit();
-        out.println("<h4>Conseguí insertar al usuario dawbio1.</h4>")   ;
+        out.println("<h4>Conseguí insertar al usuario.</h4>")   ;
 
         /*CONSULTA A UN PROCEDIMIENTO ALMACENADO*/
         /*    cstmt=conn.prepareCall("{CALL insering(?,?,?)}");
@@ -109,6 +109,29 @@
                 out.println(rst.getString("password"));
                 out.println("--");
                 out.println(rst.getString("role"));
+                out.println("<br/>");
+            }
+            
+// Paso 5. Select de la tabla pacientes.
+//            CREATE TABLE `patients` (
+//  `name` varchar(50) NOT NULL,
+//  `comments` varchar(100) NOT NULL,
+//  `bloodType` varchar(5) NOT NULL,
+//  PRIMARY KEY (`name`)
+//) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+//INSERT INTO biodatabasem15uf1.patients
+//(name, comments, bloodType)
+//VALUES('Miquel', 'SANO', 'A+');
+            out.println("<h3>Select * from patients where comments=?</h3>");
+            pstmt=conn.prepareStatement("Select * from patients where comments=?");
+            pstmt.setString(1, "SALUDABLE");
+            rst=pstmt.executeQuery();
+            while(rst.next()){
+                out.println(rst.getString("name"));
+                out.println("--");
+                out.println(rst.getString("comments"));
+                out.println("--");
+                out.println(rst.getString("bloodType"));
                 out.println("<br/>");
             }
       
